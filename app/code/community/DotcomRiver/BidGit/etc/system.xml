@@ -28,15 +28,17 @@
 
                     <fields>
                         <developer_token translate="label">
-                            <label>Developer Token</label>
+                            <label>API Developer Token</label>
                             <sort_order>10</sort_order>
+                            <tooltip>From AdWords Account settings -&gt; AdWords API Centre</tooltip>
                             <validate>required-entry</validate>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                         </developer_token>
                         <client_id translate="label">
-                            <label>Client ID</label>
+                            <label>AdWords Client ID</label>
                             <sort_order>20</sort_order>
+                            <tooltip>From AdWords panel -&gt; Accounts, format: 123-456-7890</tooltip>
                             <validate>required-entry</validate>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -44,6 +46,7 @@
                         <oauth_client_id translate="label">
                             <label>OAuth Client ID</label>
                             <sort_order>30</sort_order>
+                            <tooltip>From Google Developers Console -&gt; API Manager -&gt; Credentials</tooltip>
                             <validate>required-entry</validate>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -51,6 +54,7 @@
                         <oauth_client_secret translate="label">
                             <label>OAuth Client Secret</label>
                             <sort_order>50</sort_order>
+                            <tooltip>From Google Developers Console -&gt; API Manager -&gt; Credentials</tooltip>
                             <validate>required-entry</validate>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>

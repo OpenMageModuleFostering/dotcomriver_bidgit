@@ -7,10 +7,6 @@
  * settings, see
  * https://developers.google.com/adwords/api/docs/guides/migrate-to-extension-settings
  *
- * Tags: FeedService.query, FeedMappingService.query, FeedItemService.query
- * Tags: CampaignExtensionSettingService.mutate, CampaignFeedService.query
- * Tags: CampaignFeedService.mutate
- *
  * Copyright 2015, Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,7 +27,6 @@
  * @copyright  2015, Google Inc. All Rights Reserved.
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache License,
  *             Version 2.0
- * @author     Danial Klimkin
  */
 
 // Include the initialization file
@@ -53,7 +48,7 @@ define('PLACEHOLDER_FIELD_FINAL_URLS', 5);
 define('PLACEHOLDER_FIELD_FINAL_MOBILE_URLS', 6);
 define('PLACEHOLDER_FIELD_TRACKING_URL_TEMPLATE', 7);
 
-class SiteLinkFromFeed {
+class SitelinkFromFeed {
   public $feedId;
   public $feedItemId;
   public $text;
@@ -79,7 +74,7 @@ function MigrateToExtensionSettingsExample(AdWordsUser $user) {
   $feeds = GetFeeds($user);
   foreach ($feeds as $feed) {
     // Retrieve all the sitelinks from the current feed.
-    $feedItems = GetSiteLinksFromFeed($user, $feed->id);
+    $feedItems = GetSitelinksFromFeed($user, $feed->id);
     printf("Loaded %d sitelinks for feed ID %d.\n",
            count($feedItems), $feed->id);
 
@@ -152,7 +147,6 @@ function GetCampaignFeeds($user, $feedId, $placeholderId) {
   return $page->entries;
 }
 
-
 function GetFeedMapping($user, $feedId, $placeholderTypeId) {
   $feedMappingService =
       $user->GetService('FeedMappingService', ADWORDS_VERSION);
@@ -177,9 +171,9 @@ function GetFeedMapping($user, $feedId, $placeholderTypeId) {
   return $attributeMappings;
 }
 
-function GetSiteLinksFromFeed($user, $feedId) {
+function GetSitelinksFromFeed($user, $feedId) {
   printf("Processing feed ID %d...\n", $feedId);
-  $siteLinks = array();
+  $sitelinks = array();
 
   // Retrieve all the feed items from the feed.
   $feedItems = GetFeedItems($user, $feedId);
@@ -190,7 +184,7 @@ function GetSiteLinksFromFeed($user, $feedId) {
 
     foreach ($feedItems as $feedItem) {
       $sitelinkFromFeed =
-          new SiteLinkFromFeed($feedItem->feedId, $feedItem->feedItemId);
+          new SitelinkFromFeed($feedItem->feedId, $feedItem->feedItemId);
 
       foreach ($feedItem->attributeValues as $attributeValue) {
         // This attribute hasn't been mapped to a field.
@@ -229,10 +223,10 @@ function GetSiteLinksFromFeed($user, $feedId) {
         }
       }
       $sitelinkFromFeed->scheduling = $feedItem->scheduling;
-      $siteLinks[$feedItem->feedItemId] = $sitelinkFromFeed;
+      $sitelinks[$feedItem->feedItemId] = $sitelinkFromFeed;
     }
   }
-  return $siteLinks;
+  return $sitelinks;
 }
 
 function GetPlatformRestrictionsForCampaign($campaignFeed) {

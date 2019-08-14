@@ -22,15 +22,13 @@
  * @copyright  2015, Google Inc. All Rights Reserved.
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache License,
  *             Version 2.0
- * @author     Thanet Knack Praneenararat
  */
 
 error_reporting(E_STRICT | E_ALL);
 
 // Include the initialization file
 require_once dirname(dirname(__FILE__)) . '/init.php';
-
-require_once ADWORDS_UTIL_PATH . '/ReportUtils.php';
+require_once ADWORDS_UTIL_VERSION_PATH . '/ReportUtils.php';
 
 /**
  * Runs the example.
