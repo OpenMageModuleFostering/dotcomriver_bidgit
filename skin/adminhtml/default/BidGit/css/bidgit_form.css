@@ -1,0 +1,19 @@
+.hor-scroll {
+    overflow: visible;
+}
+
+.draggable {
+    font-weight: bold;
+}
+
+#bidgit-placeholders .bg-default input {
+    width: 98%;
+}
+
+#bidgit-placeholders tr {
+    cursor: default;
+}
+
+#bidgit-placeholders .bg-label label:hover {
+    cursor: pointer;
+}

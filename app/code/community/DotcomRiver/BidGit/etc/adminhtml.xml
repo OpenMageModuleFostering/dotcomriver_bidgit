@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin config
+ *
+ * @author DotCom River
+ */
+-->
+<config>
+    <menu>
+         <bidgit translate="title" module="dotcomriver_bidgit">
+            <title>BidGit</title>
+            <sort_order>25</sort_order>
+            <children>
+                <dashboard translate="title" module="dotcomriver_bidgit">
+                    <title>Dashboard</title>
+                    <action>adminhtml/bidgit_dashboard</action>
+                    <sort_order>10</sort_order>
+                </dashboard>
+                <campaigns translate="title" module="dotcomriver_bidgit">
+                    <title>Manage Campaigns</title>
+                    <action>adminhtml/bidgit_campaign</action>
+                    <sort_order>20</sort_order>
+                </campaigns>
+                <ad_templates translate="title" module="dotcomriver_bidgit">
+                    <title>Manage Ad Templates</title>
+                    <action>adminhtml/bidgit_adTemplate</action>
+                    <sort_order>30</sort_order>
+                </ad_templates>
+                <keyword_templates translate="title" module="dotcomriver_bidgit">
+                    <title>Manage Keyword Templates</title>
+                    <action>adminhtml/bidgit_keywordTemplate</action>
+                    <sort_order>40</sort_order>
+                </keyword_templates>
+                <placeholders translate="title" module="dotcomriver_bidgit">
+                    <title>Custom Placeholders</title>
+                    <action>adminhtml/bidgit_placeholder</action>
+                    <sort_order>50</sort_order>
+                </placeholders>
+                <sync translate="title" module="dotcomriver_bidgit">
+                    <title>Synchronization</title>
+                    <action>adminhtml/bidgit_synchronization</action>
+                    <sort_order>60</sort_order>
+                </sync>
+                <configuration translate="title">
+                    <title>Configuration</title>
+                    <action>adminhtml/system_config/edit/section/bidgit</action>
+                    <sort_order>70</sort_order>
+                </configuration>
+                <help translate="title">
+                    <title>Help</title>
+                    <sort_order>80</sort_order>
+                    <children>
+                        <app_description translate="title">
+                            <title>Application description</title>
+                            <action>adminhtml/bidgit_help/appDescription</action>
+                            <sort_order>10</sort_order>
+                        </app_description>
+                        <manual translate="title">
+                            <title>User manual</title>
+                            <action>adminhtml/bidgit_help/manual</action>
+                            <sort_order>20</sort_order>
+                        </manual>
+                        <troubleshooting translate="title">
+                            <title>Troubleshooting</title>
+                            <action>adminhtml/bidgit_help/troubleshooting</action>
+                            <sort_order>30</sort_order>
+                        </troubleshooting>
+                    </children>
+                </help>
+                <about translate="title">
+                    <title>About</title>
+                    <action>adminhtml/bidgit_about</action>
+                    <sort_order>90</sort_order>
+                </about>
+            </children>
+         </bidgit>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <bidgit translate="title" module="dotcomriver_bidgit">
+                        <title>BidGit</title>
+                        <sort_order>15</sort_order>
+                        <children>
+                            <dashboard translate="title">
+                                <title>Dashboard</title>
+                                <sort_order>0</sort_order>
+                            </dashboard>
+                            <campaigns translate="title">
+                                <title>Manage Campaigns</title>
+                                <sort_order>10</sort_order>
+                                <children>
+                                    <create translate="title">
+                                        <title>Create Campaigns</title>
+                                        <sort_order>0</sort_order>
+                                    </create>
+                                    <modify translate="title">
+                                        <title>Modify Campaigns</title>
+                                        <sort_order>10</sort_order>
+                                    </modify>
+                                    <delete translate="title">
+                                        <title>Delete Campaigns</title>
+                                        <sort_order>20</sort_order>
+                                    </delete>
+                                </children>
+                            </campaigns>
+                            <ad_templates translate="title">
+                                <title>Manage Ad Templates</title>
+                                <sort_order>20</sort_order>
+                                <children>
+                                    <create translate="title">
+                                        <title>Create Ad Templates</title>
+                                        <sort_order>0</sort_order>
+                                    </create>
+                                    <modify translate="title">
+                                        <title>Modify Ad Templates</title>
+                                        <sort_order>10</sort_order>
+                                    </modify>
+                                    <delete translate="title">
+                                        <title>Delete Ad Templates</title>
+                                        <sort_order>20</sort_order>
+                                    </delete>
+                                </children>
+                            </ad_templates>
+                            <keyword_templates translate="title">
+                                <title>Manage Keyword Templates</title>
+                                <sort_order>30</sort_order>
+                                <children>
+                                    <create translate="title">
+                                        <title>Create Keyword Templates</title>
+                                        <sort_order>0</sort_order>
+                                    </create>
+                                    <modify translate="title">
+                                        <title>Modify Keyword Templates</title>
+                                        <sort_order>10</sort_order>
+                                    </modify>
+                                    <delete translate="title">
+                                        <title>Delete Keyword Templates</title>
+                                        <sort_order>20</sort_order>
+                                    </delete>
+                                </children>
+                            </keyword_templates>
+                            <placeholders translate="title">
+                                <title>Placeholders</title>
+                                <sort_order>40</sort_order>
+                                <children>
+                                    <show translate="title">
+                                        <title>Show placeholders</title>
+                                        <sort_order>0</sort_order>
+                                    </show>
+                                    <edit translate="title">
+                                        <title>Edit placeholders</title>
+                                        <sort_order>10</sort_order>
+                                    </edit>
+                                </children>
+                            </placeholders>
+                            <sync translate="title">
+                                <title>Synchronization</title>
+                                <sort_order>50</sort_order>
+                                <children>
+                                    <run translate="title">
+                                        <title>Run Synchronization</title>
+                                        <sort_order>0</sort_order>
+                                    </run>
+                                    <show translate="title">
+                                        <title>Show Synchronization Info</title>
+                                        <sort_order>10</sort_order>
+                                    </show>
+                                    <getToken translate="title">
+                                        <title>Get Refresh Token</title>
+                                        <sort_order>20</sort_order>
+                                    </getToken>
+                                </children>
+                            </sync>
+                            <help translate="title">
+                                <title>Help</title>
+                                <sort_order>60</sort_order>
+                                <children>
+                                    <app_description translate="title">
+                                        <title>Application description</title>
+                                        <sort_order>10</sort_order>
+                                    </app_description>
+                                    <manual translate="title">
+                                        <title>User manual</title>
+                                        <sort_order>20</sort_order>
+                                    </manual>
+                                    <troubleshooting translate="title">
+                                        <title>Troubleshooting</title>
+                                        <sort_order>30</sort_order>
+                                    </troubleshooting>
+                                </children>
+                            </help>
+                            <about translate="title">
+                                <title>About</title>
+                                <sort_order>70</sort_order>
+                            </about>
+                        </children>
+                    </bidgit>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <bidgit translate="title" module="dotcomriver_bidgit">
+                                        <title>Bidgit Management</title>
+                                    </bidgit>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin configuration section config
+ *
+ * @author DotCom River
+ */
+-->
+<config>
+    <sections>
+        <bidgit>
+            <class>separator-top</class>
+            <label>BidGit</label>
+            <tab>general</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>500</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+
+            <groups>
+                <adwords translate="label">
+                    <label>AdWords account</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <!--<expanded>1</expanded>-->
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+
+                    <fields>
+                        <developer_token translate="label">
+                            <label>Developer Token</label>
+                            <sort_order>10</sort_order>
+                            <validate>required-entry</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </developer_token>
+                        <client_id translate="label">
+                            <label>Client ID</label>
+                            <sort_order>20</sort_order>
+                            <validate>required-entry</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </client_id>
+                        <oauth_client_id translate="label">
+                            <label>OAuth Client ID</label>
+                            <sort_order>30</sort_order>
+                            <validate>required-entry</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </oauth_client_id>
+                        <oauth_client_secret translate="label">
+                            <label>OAuth Client Secret</label>
+                            <sort_order>50</sort_order>
+                            <validate>required-entry</validate>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </oauth_client_secret>
+                        <oauth_client_refresh_token translate="label">
+                            <label>OAuth Client Refresh Token</label>
+                            <sort_order>60</sort_order>
+                            <tooltip>If you don't have one, go to BidGit - Synchronization</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </oauth_client_refresh_token>
+
+                        <user_agent translate="label">
+                            <label>User Agent</label>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </user_agent>
+                    </fields>
+                </adwords>
+                <keywords translate="label">
+                    <label>Keywords</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <!--<expanded>1</expanded>-->
+                    <show_in_default>1</show_in_default>
+
+                    <fields>
+                        <duplicate_search translate="label">
+                            <label>Use search URL for duplicate keywords</label>
+                            <sort_order>10</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <validate>required-entry</validate>
+                            <show_in_default>1</show_in_default>
+                        </duplicate_search>
+                    </fields>
+                </keywords>
+                <sync translate="label comment">
+                    <label>AdWords synchronization</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <!--<expanded>1</expanded>-->
+                    <comment>These options work only in the Premium version</comment>
+                    <show_in_default>1</show_in_default>
+
+                    <fields>
+                        <auto_sync translate="label">
+                            <label>Auto synchronization</label>
+                            <sort_order>10</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <validate>required-entry</validate>
+                            <show_in_default>1</show_in_default>
+                        </auto_sync>
+                        <schedule_day translate="label">
+                            <label>Day</label>
+                            <sort_order>20</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>DotcomRiver_BidGit_Model_Adminhtml_System_Config_Source_ScheduleDay</source_model>
+                            <validate>required-entry</validate>
+                            <show_in_default>1</show_in_default>
+                            <depends>
+                                <auto_sync>1</auto_sync>
+                            </depends>
+                        </schedule_day>
+                        <schedule_time translate="label">
+                            <label>Hour</label>
+                            <sort_order>30</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>DotcomRiver_BidGit_Model_Adminhtml_System_Config_Source_ScheduleHour</source_model>
+                            <validate>required-entry</validate>
+                            <show_in_default>1</show_in_default>
+                            <depends>
+                                <auto_sync>1</auto_sync>
+                            </depends>
+                        </schedule_time>
+                    </fields>
+                </sync>
+            </groups>
+        </bidgit>
+    </sections>
+</config>

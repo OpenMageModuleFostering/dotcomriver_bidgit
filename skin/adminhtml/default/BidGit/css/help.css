@@ -1,0 +1,86 @@
+.underline {
+    text-decoration: underline;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.normal {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.space-under {
+    margin-bottom: 20px !important;
+}
+
+.no-space-under {
+    margin-bottom: 0 !important;
+}
+
+.no-space-above {
+    margin-top: 0 !important;
+}
+
+.bg-list {
+    margin: 0 0 .5em 30px;
+}
+
+ol.bg-list {
+    list-style: decimal;
+}
+
+ul.bg-list {
+    list-style: disc;
+}
+
+table.bg-table {
+    border-collapse: collapse;
+    border: 1px solid #494848;
+}
+
+table.bg-table td,
+table.bg-table th {
+    border: 1px solid #494848;
+    padding: 5px;
+}
+
+table.bg-table th {
+    text-align: center;
+}
+
+table.compare-versions td.free,
+table.compare-versions td.full {
+    width: 100px;
+    max-width: 100px;
+    text-align: center;
+}
+
+table.compare-versions td.item {
+    text-align: left;
+    width: 250px;
+    max-width: 250px;
+}
+
+table.compare-versions td img.icon {
+    vertical-align: middle;
+}
+
+table.fields-desc {
+    margin-bottom: 20px;
+}
+
+table.fields-desc .field {
+    width: 200px;
+    font-style: italic;
+}
+
+table.fields-desc .desc {
+    width: 500px;
+}

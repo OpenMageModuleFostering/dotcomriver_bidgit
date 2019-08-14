@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Module initial config
+ *
+ * @author DotcomRiver <it@dotcomriver.pl>
+*/
+-->
+<config>
+    <modules>
+        <DotcomRiver_BidGit>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Adminhtml />
+            </depends>
+        </DotcomRiver_BidGit>
+    </modules>
+</config>

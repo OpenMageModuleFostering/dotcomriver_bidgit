@@ -1,0 +1,53 @@
+td.left-column {
+    width: 600px;
+}
+
+.entry-edit.sync-summary,
+.entry-edit.campaigns-summary,
+.entry-edit.account-stats {
+    width: 100%;
+}
+
+.entry-edit.account-stats .periods-container {
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.entry-edit fieldset {
+    border-width: 0 0 0 1px;
+}
+
+.entry-edit.dashboard-diagram {
+    border: 0;
+}
+
+.entry-edit.dashboard-diagram fieldset {
+    border: 1px solid #dadfe0;
+    background: #f6f6f6;
+    width: 710px;
+    height: 372px;
+}
+
+.entry-edit.dashboard-diagram .premium {
+    width: 100%;
+    height: 100%;
+    background: url('../images/graph.png') center center no-repeat;
+    position: relative;
+}
+
+.entry-edit.dashboard-diagram .premium .info1 {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 17px;
+    top: 203px;
+}
+
+.entry-edit.dashboard-diagram .premium .info2 {
+    position: absolute;
+    text-align: right;
+    width: 120px;
+    font-size: 15px;
+    top: 238px;
+    right: 130px;
+}

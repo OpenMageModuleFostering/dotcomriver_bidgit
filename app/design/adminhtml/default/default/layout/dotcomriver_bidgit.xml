@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * BidGit backend layout
+ *
+ * @author DotCom River
+ */
+-->
+<layout>
+    <adminhtml_bidgit_campaign_index>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_campaign" name="campaign" />
+            <block type="dotcomriver_bidgit/adminhtml_campaignsLimit" name="dotcomriver.bidgit.campaignsLimit" />
+            <block type="dotcomriver_bidgit/adminhtml_premiumInfo" name="dotcomriver.bidgit.premiumInfo" />
+        </reference>
+    </adminhtml_bidgit_campaign_index>
+
+    <adminhtml_bidgit_campaign_grid>
+        <block type="dotcomriver_bidgit/adminhtml_campaign_grid" name="dotcomriver.bidgit.campaign.grid" />
+    </adminhtml_bidgit_campaign_grid>
+
+    <adminhtml_bidgit_campaign_new>
+        <update handle="adminhtml_bidgit_campaign_edit" />
+    </adminhtml_bidgit_campaign_new>
+
+    <adminhtml_bidgit_campaign_edit>
+        <update handle="editor"/>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>../../default/BidGit/css/bidgit_form.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_campaign_edit" name="campaign_edit" />
+            <block type="dotcomriver_bidgit/adminhtml_premiumInfo" name="dotcomriver.bidgit.premiumInfo" />
+        </reference>
+        <reference name="left">
+            <!--<block type="adminhtml/store_switcher" name="store_switcher" template="store/switcher.phtml" />-->
+            <block type="dotcomriver_bidgit/adminhtml_campaign_edit_tabs" name="campaign_edit_tabs">
+                <block type="dotcomriver_bidgit/adminhtml_campaign_edit_tab_settings" name="campaign_edit_tab_settings" />
+                <block type="dotcomriver_bidgit/adminhtml_campaign_edit_tab_products" name="campaign_edit_tab_products" />
+                <action method="addTab">
+                    <name>settings_section</name>
+                    <block>campaign_edit_tab_settings</block>
+                </action>
+                <action method="addTab">
+                    <name>products_section</name>
+                    <block>campaign_edit_tab_products</block>
+                </action>
+            </block>
+        </reference>
+    </adminhtml_bidgit_campaign_edit>
+
+
+    <adminhtml_bidgit_campaign_adtemplatestab>
+        <block type="dotcomriver_bidgit/adminhtml_campaign_edit_tab_adTemplates" name="campaign_edit_tab_adtemplates"/>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="dotcomriver_bidgit/adminhtml_campaign_edit_tab_templatesGridContainer" name="campaign_edit_tab_templatesGridContainer" />
+            <block type="adminhtml/widget_grid_serializer" name="campaign_adtemplates_serializer">
+                <action method="initSerializerBlock">
+                    <grid_block_name>campaign_edit_tab_adtemplates</grid_block_name>
+                    <data_callback>getSelectedTemplates</data_callback>
+                    <hidden_input_name>adtemplate_ids</hidden_input_name>
+                    <reload_param_name>adtemplates</reload_param_name>
+                </action>
+            </block>
+        </block>
+    </adminhtml_bidgit_campaign_adtemplatestab>
+
+    <adminhtml_bidgit_campaign_adtemplatesgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="dotcomriver_bidgit/adminhtml_campaign_edit_tab_adTemplates" name="campaign_edit_tab_adtemplates"/>
+        </block>
+    </adminhtml_bidgit_campaign_adtemplatesgrid>
+
+    <adminhtml_bidgit_campaign_keywordtemplatestab>
+        <block type="dotcomriver_bidgit/adminhtml_campaign_edit_tab_keywordTemplates" name="campaign_edit_tab_keywordtemplates"/>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="dotcomriver_bidgit/adminhtml_campaign_edit_tab_templatesGridContainer" name="campaign_edit_tab_templatesGridContainer" />
+            <block type="adminhtml/widget_grid_serializer" name="campaign_keywordtemplates_serializer">
+                <action method="initSerializerBlock">
+                    <grid_block_name>campaign_edit_tab_keywordtemplates</grid_block_name>
+                    <data_callback>getSelectedTemplates</data_callback>
+                    <hidden_input_name>keywordtemplate_ids</hidden_input_name>
+                    <reload_param_name>keywordtemplates</reload_param_name>
+                </action>
+            </block>
+        </block>
+    </adminhtml_bidgit_campaign_keywordtemplatestab>
+
+    <adminhtml_bidgit_campaign_keywordtemplatesgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="dotcomriver_bidgit/adminhtml_campaign_edit_tab_keywordTemplates" name="campaign_edit_tab_keywordtemplates"/>
+        </block>
+    </adminhtml_bidgit_campaign_keywordtemplatesgrid>
+
+
+    <adminhtml_bidgit_synchronization_index>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_synchronization" name="synchronization" template="dotcomriver_bidgit/synchronization/index.phtml" />
+        </reference>
+    </adminhtml_bidgit_synchronization_index>
+
+
+    <adminhtml_bidgit_dashboard_index>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>../../default/BidGit/css/dashboard.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_dashboard" name="dashboard" template="dotcomriver_bidgit/dashboard/index.phtml">
+                <block type="dotcomriver_bidgit/adminhtml_dashboard_syncSummary" name="dashboard_syncSummary" template="dotcomriver_bidgit/dashboard/sync_summary.phtml" />
+                <block type="dotcomriver_bidgit/adminhtml_dashboard_accountStats" name="dashboard_accountStats" template="dotcomriver_bidgit/dashboard/account_stats.phtml" />
+                <block type="dotcomriver_bidgit/adminhtml_dashboard_campaignsSummary" name="dashboard_campaignsSummary" template="dotcomriver_bidgit/dashboard/campaigns_summary.phtml" />
+                <block type="dotcomriver_bidgit/adminhtml_dashboard_performanceGraph" name="dashboard_performanceGraph" template="dotcomriver_bidgit/dashboard/performance_graph.phtml" />
+            </block>
+        </reference>
+    </adminhtml_bidgit_dashboard_index>
+
+
+    <adminhtml_bidgit_about_index>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_about" name="about" template="dotcomriver_bidgit/about/index.phtml" />
+        </reference>
+    </adminhtml_bidgit_about_index>
+
+
+    <adminhtml_bidgit_keywordtemplate_index>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_keywordTemplate" name="keywordTemplate" />
+            <block type="dotcomriver_bidgit/adminhtml_premiumInfo" name="dotcomriver.bidgit.premiumInfo" />
+        </reference>
+    </adminhtml_bidgit_keywordtemplate_index>
+
+    <adminhtml_bidgit_keywordtemplate_grid>
+        <block type="dotcomriver_bidgit/adminhtml_keywordTemplate_grid" name="dotcomriver.bidgit.keywordTemplate.grid" />
+    </adminhtml_bidgit_keywordtemplate_grid>
+
+    <adminhtml_bidgit_keywordtemplate_new>
+        <update handle="adminhtml_bidgit_keywordtemplate_edit" />
+    </adminhtml_bidgit_keywordtemplate_new>
+
+    <adminhtml_bidgit_keywordtemplate_edit>
+        <update handle="editor"/>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>../../default/BidGit/css/bidgit_form.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_keywordTemplate_edit" name="keywordtemplate_edit" />
+            <block type="dotcomriver_bidgit/adminhtml_premiumInfo" name="dotcomriver.bidgit.premiumInfo" />
+        </reference>
+    </adminhtml_bidgit_keywordtemplate_edit>
+
+
+    <adminhtml_bidgit_adtemplate_index>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_adTemplate" name="dotcomriver.bidgit.adTemplate.index" />
+        </reference>
+    </adminhtml_bidgit_adtemplate_index>
+
+    <adminhtml_bidgit_adtemplate_grid>
+        <block type="dotcomriver_bidgit/adminhtml_adTemplate_grid" name="dotcomriver.bidgit.adTemplate.grid" />
+    </adminhtml_bidgit_adtemplate_grid>
+
+    <adminhtml_bidgit_adtemplate_new>
+        <update handle="adminhtml_bidgit_adtemplate_edit" />
+    </adminhtml_bidgit_adtemplate_new>
+
+    <adminhtml_bidgit_adtemplate_edit>
+        <update handle="editor"/>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>../../default/BidGit/css/bidgit_form.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_adTemplate_edit" name="dotcomriver.bidgit.adTemplate.edit" />
+        </reference>
+    </adminhtml_bidgit_adtemplate_edit>
+
+
+    <adminhtml_bidgit_help_appdescription>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>../../default/BidGit/css/help.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_help_appDescription" name="dotcomriver.bidgit.help.appDescription" template="dotcomriver_bidgit/help/app_description.phtml" />
+        </reference>
+    </adminhtml_bidgit_help_appdescription>
+
+    <adminhtml_bidgit_help_manual>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>../../default/BidGit/css/help.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_help_manual" name="dotcomriver.bidgit.help.manual" template="dotcomriver_bidgit/help/manual.phtml" />
+        </reference>
+    </adminhtml_bidgit_help_manual>
+
+    <adminhtml_bidgit_help_troubleshooting>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>../../default/BidGit/css/help.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_help_troubleshooting" name="dotcomriver.bidgit.help.troubleshooting" template="dotcomriver_bidgit/help/troubleshooting.phtml" />
+        </reference>
+    </adminhtml_bidgit_help_troubleshooting>
+
+
+    <adminhtml_bidgit_placeholder_index>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_placeholder" name="dotcomriver.bidgit.placeholder.index" />
+        </reference>
+    </adminhtml_bidgit_placeholder_index>
+
+    <adminhtml_bidgit_placeholder_grid>
+        <block type="dotcomriver_bidgit/adminhtml_placeholder_grid" name="dotcomriver.bidgit.placeholder.grid" />
+    </adminhtml_bidgit_placeholder_grid>
+
+    <adminhtml_bidgit_placeholder_edit>
+        <update handle="editor"/>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>../../default/BidGit/css/bidgit_form.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="dotcomriver_bidgit/adminhtml_placeholder_edit" name="dotcomriver.bidgit.placeholder.edit" />
+            <block type="dotcomriver_bidgit/adminhtml_premiumInfo" name="dotcomriver.bidgit.premiumInfo" />
+        </reference>
+    </adminhtml_bidgit_placeholder_edit>
+</layout>
