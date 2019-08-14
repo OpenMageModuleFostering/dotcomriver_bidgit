@@ -9,7 +9,7 @@
 <config>
     <modules>
         <DotcomRiver_BidGit>
-            <version>1.1.5</version>
+            <version>1.1.6</version>
         </DotcomRiver_BidGit>
     </modules>
     <global>

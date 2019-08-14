@@ -1344,7 +1344,7 @@ if (!class_exists("InternalApiErrorReason", false)) {
 
 if (!class_exists("LabelStatus", false)) {
   /**
-   * <span class="constraint Rejected">Used for return value only. An enumeration could not be processed, typically due to incompatibility with your WSDL version.</span>
+   * The label is enabled.
    * @package Google_Api_Ads_AdWords_v201509
    * @subpackage v201509
    */
@@ -3170,7 +3170,6 @@ if (!class_exists("OperatorError", false)) {
 if (!class_exists("PagingError", false)) {
   /**
    * Error codes for pagination.
-   * See {@link com.google.ads.api.services.common.pagination.Paging}.
    * @package Google_Api_Ads_AdWords_v201509
    * @subpackage v201509
    */
