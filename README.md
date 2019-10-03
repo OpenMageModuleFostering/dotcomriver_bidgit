@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 With BidGit addon for Magento you can easily create automated AdWords campaigns for thousands of your products directly from Magento shop. 
