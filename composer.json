@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/DotcomRiver_BidGit",
+    "name": "OpenMageModuleFostering\/DotcomRiver_BidGit",
     "type": "magento-module",
     "license": "EULA",
     "homepage": "",
     "description": "With BidGit addon for Magento you can easily create automated AdWords campaigns for thousands of your products directly from Magento shop. ",
     "authors": [
-    {
-        "name": "DotCom River",
-        "email": "info@dotcomriver.pl"
-    }
-],
+        {
+            "name": "DotCom River",
+            "email": "info@dotcomriver.pl"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
